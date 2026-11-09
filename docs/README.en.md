@@ -1,7 +1,7 @@
 <p align="center"><img src="../assets/favicon.svg" width="72" alt="How GitHub branch mark" /></p>
 <h1 align="center">How GitHub</h1>
 <p align="center">An interactive business atlas explaining how GitHub connects developers, enterprises, AI, and software delivery.</p>
-<p align="center"><a href="../README.md">简体中文</a></p>
+<p align="center"><a href="https://github.hexly.ai">Website</a> · <a href="../README.md">简体中文</a></p>
 
 ## What it does
 
