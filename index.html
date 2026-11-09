@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="GitHub 商业全景：从开源社区、企业协作到 AI 代理经济。交互解读公司历史、产品、定价、财务、微软生态、竞争与风险，附原始研究资料。">
+  <title>GitHub 商业全景 · 从代码仓库到 AI 基础设施</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <a class="brand" href="#overview" aria-label="GitHub 商业全景首页">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 8v16M23 8v4c0 6-14 3-14 10"/><circle cx="9" cy="7" r="3"/><circle cx="23" cy="7" r="3"/><circle cx="9" cy="25" r="3"/></svg>
+      <strong>GitHub<span>商业全景</span></strong>
+    </a>
+    <span class="header-edition">独立研究 / 2026 年 11 月</span>
+    <div class="header-actions">
+      <button id="motion-toggle" type="button" aria-pressed="false" hidden><span class="motion-icon" aria-hidden="true">Ⅱ</span><span class="motion-label">暂停动效</span></button>
+      <a href="#sources">研究资料 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+
+  <aside class="chapter-rail" aria-label="章节导航">
+    <div class="rail-heading">研究目录 <span>10</span></div>
+    <nav>
+      <a href="#overview" aria-current="location"><span>01</span> 公司全景</a>
+      <a href="#history"><span>02</span> 演进路径</a>
+      <a href="#products"><span>03</span> 产品版图</a>
+      <a href="#business"><span>04</span> 商业飞轮</a>
+      <a href="#pricing"><span>05</span> 收费体系</a>
+      <a href="#financials"><span>06</span> 财务边界</a>
+      <a href="#ai"><span>07</span> AI 战略</a>
+      <a href="#ecosystem"><span>08</span> 微软与生态</a>
+      <a href="#competition"><span>09</span> 竞争与风险</a>
+      <a href="#sources"><span>10</span> 资料与来源</a>
+    </nav>
+    <div class="rail-footer"><span class="branch-symbol" aria-hidden="true">⑂</span><p>从代码出发<br>看懂平台生意</p><span class="mono">2008 — 2026</span></div>
+  </aside>
+
+  <main id="main">
+    <section class="hero chapter" id="overview" aria-labelledby="hero-title">
+      <div class="hero-topline"><span class="eyebrow">01 / 公司全景</span><span class="mono">The business of building software</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <div class="overline"><span class="small-square" aria-hidden="true"></span> Microsoft 旗下开发者平台</div>
+          <h1 id="hero-title">代码之上，<br>一个商业<span class="accent">帝国</span>。</h1>
+          <p class="hero-deck">从开发者存放代码的地方，<br>到 AI 时代软件生产的基础设施。</p>
+          <p class="hero-summary">GitHub 的生意不只是仓库。它把开发者、企业、计算、安全和 AI 连在一起，在软件从想法到上线的每个关键环节创造收入。</p>
+          <div class="hero-actions"><a class="button primary" href="#products">探索商业版图 <span aria-hidden="true">↘</span></a><a class="text-link" href="#financials">它究竟如何赚钱？ <span aria-hidden="true">→</span></a></div>
+          <div class="hero-note">基于本地研究资料 · 截至 2026.11.09<br>非 GitHub 官方页面；资料未在本次制作中重新联网核验</div>
+        </div>
+        <figure class="network-figure reveal" aria-labelledby="network-title">
+          <div class="figure-heading"><span id="network-title">一个平台，多重商业入口</span><span class="mono">Platform map</span></div>
+          <svg class="network" viewBox="0 0 620 490" role="img" aria-labelledby="network-svg-title network-desc">
+            <title id="network-svg-title">GitHub 的商业关系图</title>
+            <desc id="network-desc">开发者、开源社区和企业汇聚到 GitHub；Copilot、安全、Actions、Azure 及 Marketplace 围绕代码与协作产生业务。连线表示关系，不表示收入比例。</desc>
+            <defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor"/></pattern></defs>
+            <rect width="620" height="490" fill="url(#dots)" class="dot-field"/>
+            <g class="network-rings"><circle cx="310" cy="244" r="108"/><circle cx="310" cy="244" r="180"/></g>
+            <g class="network-lines">
+              <path d="M310 85V174"/><path d="M156 121L252 195"/><path d="M464 121L368 195"/>
+              <path d="M125 244H235"/><path d="M385 244H495"/><path d="M156 370L252 293"/>
+              <path d="M310 314V405"/><path d="M368 293L464 370"/>
+            </g>
+            <g class="network-traces" aria-hidden="true">
+              <path style="--i:0" d="M310 85V174"/><path style="--i:1" d="M156 121L252 195"/><path style="--i:2" d="M464 121L368 195"/>
+              <path style="--i:3" d="M125 244H235"/><path style="--i:4" d="M385 244H495"/><path style="--i:5" d="M156 370L252 293"/>
+              <path style="--i:6" d="M310 314V405"/><path style="--i:7" d="M368 293L464 370"/>
+            </g>
+            <g class="network-node" transform="translate(310 64)"><rect x="-66" y="-25" width="132" height="50" rx="8"/><text y="-2">开发者</text><text class="node-sub" y="15">身份与工作流</text></g>
+            <g class="network-node" transform="translate(123 110)"><rect x="-65" y="-25" width="130" height="50" rx="8"/><text y="-2">开源社区</text><text class="node-sub" y="15">网络效应</text></g>
+            <g class="network-node" transform="translate(497 110)"><rect x="-65" y="-25" width="130" height="50" rx="8"/><text y="-2">企业客户</text><text class="node-sub" y="15">席位与治理</text></g>
+            <g class="network-node" transform="translate(90 244)"><rect x="-68" y="-25" width="136" height="50" rx="8"/><text y="-2">应用生态</text><text class="node-sub" y="15">集成与分发</text></g>
+            <g class="network-node node-ai" transform="translate(530 244)"><rect x="-68" y="-25" width="136" height="50" rx="8"/><text y="-2">Copilot</text><text class="node-sub" y="15">AI 用量</text></g>
+            <g class="network-node" transform="translate(123 380)"><rect x="-65" y="-25" width="130" height="50" rx="8"/><text y="-2">Azure</text><text class="node-sub" y="15">计算基础设施</text></g>
+            <g class="network-node" transform="translate(310 427)"><rect x="-66" y="-25" width="132" height="50" rx="8"/><text y="-2">Actions</text><text class="node-sub" y="15">执行与交付</text></g>
+            <g class="network-node" transform="translate(497 380)"><rect x="-65" y="-25" width="130" height="50" rx="8"/><text y="-2">安全治理</text><text class="node-sub" y="15">安全与合规</text></g>
+            <g class="network-core"><circle cx="310" cy="244" r="74"/><path d="M293 203v22m34-22v5c0 11-34 7-34 17"/><circle class="core-pin" cx="293" cy="200" r="4"/><circle class="core-pin" cx="327" cy="200" r="4"/><circle class="core-pin" cx="293" cy="228" r="4"/><text x="310" y="259">GitHub</text><text class="core-sub" x="310" y="281">代码 · 协作 · 治理</text></g>
+          </svg>
+          <figcaption><span><span class="legend-dot"></span> 关系示意，不代表收入占比</span><button class="replay-button" type="button" data-replay="network" hidden>重播连线 <span aria-hidden="true">↻</span></button></figcaption>
+        </figure>
+      </div>
+      <div class="metrics reveal">
+        <div><span class="metric-label">开发者规模</span><strong>2.25<span>亿+</span></strong><small>2026 年 9 月 · Octoverse <a href="#ref-octoverse" aria-label="查看开发者规模来源">[1]</a></small></div>
+        <div><span class="metric-label">Copilot 用户</span><strong>5,000<span>万</span></strong><small>2026 年 7 月 · 总用户，非付费人数口径 <a href="#ref-msft" aria-label="查看 Copilot 用户来源">[2]</a></small></div>
+        <div><span class="metric-label">已披露年化营收</span><strong>20<span>亿美元</span></strong><small>2024 年 7 月 · 非 2026 年收入 <a href="#ref-revenue" aria-label="查看年化营收来源">[3]</a></small></div>
+        <div><span class="metric-label">财富 500 强覆盖</span><strong>90<span>%+</span></strong><small>2026 年 7 月 · 使用比例 <a href="#ref-msft" aria-label="查看企业覆盖来源">[2]</a></small></div>
+      </div>
+      <div class="thesis reveal"><span class="eyebrow">核心判断 · 研究推断</span><p>代码生成越来越便宜。<br><strong>执行、验证和治理，正在成为更有价值的环节。</strong></p><a href="docs/README.md">阅读研究摘要 <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="chapter" id="history" aria-labelledby="history-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">02 / 演进路径</span><h2 id="history-title">18 年，三次重心迁移。</h2></div><p>从开源协作网络，到企业软件平台，<br>再到微软的 AI 软件交付入口。</p></div>
+      <div class="era-strip reveal"><span>2008 — 2017 <b>开发者网络</b></span><span>2018 — 2023 <b>企业平台</b></span><span>2024 — 2026 <b>代理经济</b></span></div>
+      <div class="timeline reveal" data-tabs>
+        <div class="timeline-track tab-buttons" role="tablist" aria-label="选择历史年份">
+          <button type="button" id="year-2008" role="tab" aria-selected="true" aria-controls="event-2008">2008<span>成立</span></button>
+          <button type="button" id="year-2018" role="tab" aria-selected="false" aria-controls="event-2018" tabindex="-1">2018<span>微软收购</span></button>
+          <button type="button" id="year-2020" role="tab" aria-selected="false" aria-controls="event-2020" tabindex="-1">2020<span>生态扩张</span></button>
+          <button type="button" id="year-2022" role="tab" aria-selected="false" aria-controls="event-2022" tabindex="-1">2022<span>AI 商业化</span></button>
+          <button type="button" id="year-2025" role="tab" aria-selected="false" aria-controls="event-2025" tabindex="-1">2025<span>组织整合</span></button>
+          <button type="button" id="year-2026" role="tab" aria-selected="false" aria-controls="event-2026" tabindex="-1">2026<span>按量经济</span></button>
+        </div>
+        <div class="timeline-panels">
+          <article id="event-2008" role="tabpanel" aria-labelledby="year-2008" tabindex="0"><span class="event-year">2008</span><div><h3>让代码协作变成一种网络</h3><p>Chris Wanstrath、PJ Hyett、Tom Preston-Werner 与 Scott Chacon 创立 GitHub。围绕 Git，把代码托管、贡献记录与开发者身份连接起来。</p><span class="event-meaning">商业意义 / 社区和协作关系先于商业化积累</span></div></article>
+          <article id="event-2018" role="tabpanel" aria-labelledby="year-2018" tabindex="0"><span class="event-year">2018</span><div><h3>75 亿美元，进入微软版图</h3><p>微软 6 月宣布以股票收购 GitHub，10 月完成交割，Nat Friedman 出任 CEO。宣布收购时，平台已有约 2,800 万开发者。</p><span class="event-meaning">商业意义 / 接入企业渠道、云基础设施与资本</span></div></article>
+          <article id="event-2020" role="tabpanel" aria-labelledby="year-2020" tabindex="0"><span class="event-year">2020</span><div><h3>收购 npm，把触角伸向软件供应链</h3><p>npm 连接 JavaScript 的依赖生态；免费团队私有仓库降低协作门槛。GitHub 的边界从“代码存在哪里”扩展到“软件如何被构建”。</p><span class="event-meaning">商业意义 / 免费协作扩大入口，供应链加深生态黏性</span></div></article>
+          <article id="event-2022" role="tabpanel" aria-labelledby="year-2022" tabindex="0"><span class="event-year">2022</span><div><h3>Copilot 从技术预览走向收费</h3><p>2021 年预览后，Copilot 在 2022 年 6 月向个人开放付费订阅，月费 10 美元。GitHub 开始从管理代码，进入辅助编写代码。</p><span class="event-meaning">商业意义 / 在平台席位之外建立新的 AI 收费面</span></div></article>
+          <article id="event-2025" role="tabpanel" aria-labelledby="year-2025" tabindex="0"><span class="event-year">2025</span><div><h3>更深地融入微软，向多代理平台转向</h3><p>媒体报道 Thomas Dohmke 宣布离任，GitHub 并入 Jay Parikh 领导的 CoreAI。Agent HQ 推出，安全产品拆分销售，Azure 迁移进入关键阶段。</p><span class="event-meaning">口径说明 / 组织变化含媒体信息；此后的独立 CEO 任命未核实</span></div></article>
+          <article id="event-2026" role="tabpanel" aria-labelledby="year-2026" tabindex="0"><span class="event-year">2026</span><div><h3>从“多少人订阅”，到“代理完成多少工作”</h3><p>6 月 Copilot 转向 AI Credits 按量计费；10 月发布 Copilot app、Fusion 与企业 Copilot access。软件交付闭环成为产品整合的中心。</p><span class="event-meaning">商业意义 / 席位、模型用量、计算与治理形成混合收入模式</span></div></article>
+        </div>
+      </div>
+      <p class="source-note">依据：<a href="docs/01-公司概况与历史.md">公司概况与历史</a>。早期事件沿用原资料，未在本次重新核实；商业意义为研究解读。</p>
+    </section>
+
+    <section class="chapter" id="products" aria-labelledby="products-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">03 / 产品版图</span><h2 id="products-title">不只是托管代码。<br>是一整条软件生产线。</h2></div><p>从想法、开发、审查到部署，<br>免费入口与付费能力层层衔接。</p></div>
+      <div class="lifecycle reveal" aria-label="软件生产流程"><span>计划 <small>Issues · Projects</small></span><span>编写 <small>Copilot · Codespaces</small></span><span>协作 <small>Repositories · PR</small></span><span>验证 <small>Security · Review</small></span><span>交付 <small>Actions · Packages</small></span></div>
+      <div class="filter-bar reveal"><div class="segmented" role="group" aria-label="按业务类型筛选产品" id="product-filters" hidden><button type="button" data-filter="all" aria-pressed="true">全部版图</button><button type="button" data-filter="collaboration" aria-pressed="false">协作与治理</button><button type="button" data-filter="compute" aria-pressed="false">计算与交付</button><button type="button" data-filter="ai" aria-pressed="false">AI 与安全</button><button type="button" data-filter="community" aria-pressed="false">开发者生态</button></div><span id="product-count" class="mono" role="status">12 项核心能力</span></div>
+      <div class="product-grid reveal">
+        <article class="product-card" data-category="collaboration"><span class="product-number">01 / 协作底座</span><h3>Repositories & PR</h3><p>代码托管、版本管理、Pull Requests、代码审查与 Discussions。开发者身份和协作记录沉淀于此。</p><span class="product-revenue">免费入口 → 高级协作席位</span></article>
+        <article class="product-card" data-category="collaboration"><span class="product-number">02 / 工作管理</span><h3>Issues & Projects</h3><p>连接需求、任务、里程碑与代码变更。Wiki 和 Pages 承载文档与静态站点。</p><span class="product-revenue">平台黏性 → 团队升级</span></article>
+        <article class="product-card" data-category="collaboration"><span class="product-number">03 / 企业治理</span><h3>GitHub Enterprise</h3><p>Cloud 提供企业托管用户、数据驻留等云端治理；Server 满足自托管需求。身份与审计能力依部署方式而异。</p><span class="product-revenue">按用户订阅 + 企业支持合同</span></article>
+        <article class="product-card" data-category="compute"><span class="product-number">04 / 自动化</span><h3>GitHub Actions</h3><p>CI/CD、测试、构建与部署。人类提交和代理产出都需要执行验证，形成持续计算需求。</p><span class="product-revenue">托管 runner 分钟 + 存储</span></article>
+        <article class="product-card" data-category="compute"><span class="product-number">05 / 云开发</span><h3>Codespaces</h3><p>浏览器或本地编辑器连接云端容器环境，减少开发环境配置成本。</p><span class="product-revenue">计算时长 + 存储</span></article>
+        <article class="product-card" data-category="compute"><span class="product-number">06 / 制品与运行</span><h3>Packages · LFS · Sandbox</h3><p>包、容器镜像、大文件与隔离执行环境。Sandbox 的正式发布时间在原资料中尚待核实。</p><span class="product-revenue">存储 / 流量 / 计算用量</span></article>
+        <article class="product-card product-card-accent" data-category="ai"><span class="product-number">07 / AI 入口</span><h3>GitHub Copilot</h3><p>补全、Chat、CLI、云端代理、代码审查与桌面 app，覆盖从编辑器到 PR 的工作。</p><span class="product-revenue">订阅 + AI Credits</span></article>
+        <article class="product-card" data-category="ai"><span class="product-number">08 / 代理平台</span><h3>Agent HQ & Models</h3><p>统一管理自营与第三方代理；GitHub Models 提供模型入口，Fusion 负责多模型编排。</p><span class="product-revenue">模型用量 + 平台工作流</span></article>
+        <article class="product-card" data-category="ai"><span class="product-number">09 / 安全治理</span><h3>Advanced Security</h3><p>Secret Protection 防止密钥泄露；Code Security 集成 CodeQL、依赖审查与 Autofix。</p><span class="product-revenue">活跃提交者订阅 + AI 用量</span></article>
+        <article class="product-card" data-category="community"><span class="product-number">10 / 软件供应链</span><h3>npm & Marketplace</h3><p>npm 连接 JavaScript 包生态，Marketplace 连接 Apps 与 Actions，扩展平台能力与分发网络。</p><span class="product-revenue">生态分发；Marketplace 分成待核实</span></article>
+        <article class="product-card" data-category="community"><span class="product-number">11 / 开源资助</span><h3>GitHub Sponsors</h3><p>让个人和组织资助开源维护者。个人赞助零手续费，组织赞助存在手续费。</p><span class="product-revenue">生态留存 + 部分交易手续费</span></article>
+        <article class="product-card" data-category="community"><span class="product-number">12 / 人才入口</span><h3>Education & Open Source</h3><p>学生、教师、开源维护者的免费权益，让下一代开发者更早进入 GitHub 工作流。</p><span class="product-revenue">获客与网络效应，非直接营收指标</span></article>
+      </div>
+      <p class="source-note">产品与收费面：<a href="docs/02-产品与功能矩阵.md">产品矩阵</a> · <a href="docs/03-付费服务与定价.md">定价研究</a>。以上为业务分类，不是官方收入分部。</p>
+    </section>
+
+    <section class="chapter" id="business" aria-labelledby="business-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">04 / 商业飞轮</span><h2 id="business-title">免费吸引开发者，<br>复杂度带来付费需求。</h2></div><p>平台真正积累的是身份、代码和协作关系。<br>企业规模与代理活动让这些关系产生收入。</p></div>
+      <div class="business-board reveal">
+        <div class="board-header"><span>从网络效应到收入</span><span class="tag">研究推断 · 非收入构成</span></div>
+        <ol class="flywheel">
+          <li style="--step:0"><span class="step-index">01</span><h3>免费入口</h3><p>公开 / 私有仓库<br>开源、教育与免费工具</p><small>降低加入门槛</small></li>
+          <li style="--step:1"><span class="step-index">02</span><h3>协作网络</h3><p>开发者身份、代码<br>PR、依赖与集成</p><small>积累迁移成本</small></li>
+          <li style="--step:2"><span class="step-index">03</span><h3>企业采购</h3><p>Enterprise、安全<br>治理与技术支持</p><small>订阅和合同收入</small></li>
+          <li style="--step:3"><span class="step-index">04</span><h3>代理执行</h3><p>Copilot、Actions<br>沙箱、审查与扫描</p><small>放大计算与 AI 用量</small></li>
+          <li style="--step:4"><span class="step-index">05</span><h3>持续投入</h3><p>基础设施、工具<br>模型与路由能力</p><small>吸引更多工作负载</small></li>
+        </ol>
+        <div class="flywheel-return"><span aria-hidden="true">↳</span> 更完整的工作流，吸引更多开发者与企业回到平台 <span aria-hidden="true">↰</span></div>
+      </div>
+      <div class="revenue-logic reveal"><article><span class="eyebrow">收入底盘</span><h3>卖协作与管理权</h3><p>Team / Enterprise 平台席位、安全模块和企业支持，为组织提供规则、权限、审计和合规能力。</p></article><article><span class="eyebrow">增长变量</span><h3>卖执行与 AI 消耗</h3><p>代理越活跃，模型推理、测试、审查和沙箱的消耗可能越大；但收入增长必须覆盖基础设施与推理成本。</p></article><article><span class="eyebrow">长期护城河</span><h3>让工作流留在平台</h3><p>即便开发者使用别家的代理，PR、验证、安全和交付仍可能在 GitHub 上完成。工具竞争和平台收入并不完全重合。</p></article></div>
+      <p class="source-note">商业逻辑为定性推断，依据：<a href="docs/05-商业模式与生态布局.md">商业模式与生态布局</a>。GitHub 未披露各业务收入占比。</p>
+    </section>
+
+    <section class="chapter" id="pricing" aria-labelledby="pricing-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">05 / 收费体系</span><h2 id="pricing-title">一张账单，<br>不止一种计费逻辑。</h2></div><p>平台席位 + AI 用量 + 计算与存储 + 安全。<br>所有价格为研究资料的 2026 年 11 月快照。</p></div>
+      <div class="pricing-area reveal" data-tabs>
+        <div class="segmented tab-buttons" role="tablist" aria-label="选择定价类别">
+          <button type="button" role="tab" id="price-platform" aria-selected="true" aria-controls="panel-platform">平台订阅</button>
+          <button type="button" role="tab" id="price-copilot" aria-selected="false" aria-controls="panel-copilot" tabindex="-1">Copilot</button>
+          <button type="button" role="tab" id="price-compute" aria-selected="false" aria-controls="panel-compute" tabindex="-1">计算与存储</button>
+          <button type="button" role="tab" id="price-security" aria-selected="false" aria-controls="panel-security" tabindex="-1">安全与生态</button>
+        </div>
+        <div id="panel-platform" class="pricing-panel" role="tabpanel" aria-labelledby="price-platform" tabindex="0">
+          <div class="plans-grid"><article class="plan"><span class="plan-label">个人与开源入口</span><h3>Free</h3><div class="price">$0</div><p>无限公开与私有仓库，基础协作与 Dependabot。</p><ul><li>Actions：每月 $12 计算额度</li><li>Packages：500 MB 存储</li><li>个人 Codespaces：120 核时 / 月</li></ul></article><article class="plan"><span class="plan-label">团队协作</span><h3>Team</h3><div class="price">$4<span>/ 用户 / 月</span></div><p>更完整的协作规则、代码所有者与审查控制。</p><ul><li>Actions：每月 $18 计算额度</li><li>Packages：2 GB 存储</li><li>可加购安全产品</li></ul></article><article class="plan plan-featured"><span class="plan-label">企业治理</span><h3>Enterprise</h3><div class="price">$21<span>/ 用户 / 月起</span></div><p>Cloud / Server、身份治理、审计与企业级控制。</p><ul><li>Enterprise Cloud：Actions $300 / 月</li><li>Cloud：EMU、数据驻留；Server：自托管</li><li>GHEC 包含 Copilot access，AI 用量另计</li></ul></article></div>
+          <p class="panel-note">个人 GitHub Pro 的当前标价未核实，故不展示；Premium / Premium Plus 支持需联系销售。</p>
+        </div>
+        <div id="panel-copilot" class="pricing-panel" role="tabpanel" aria-labelledby="price-copilot" tabindex="0">
+          <div class="credit-banner"><strong>1 AI Credit = $0.01</strong><span>按 token 计价；补全与 Next Edit Suggestions 不消耗 credits</span></div>
+          <div class="table-scroll" role="region" aria-label="Copilot 订阅与额度表，可横向滚动" tabindex="0"><table><caption>Copilot 月度订阅与内含额度</caption><thead><tr><th scope="col">套餐</th><th scope="col">月费</th><th scope="col">每月内含额度</th><th scope="col">适用与边界</th></tr></thead><tbody><tr><th scope="row">Free / Student</th><td>$0</td><td>有限额度</td><td>学生需验证；具体能力依套餐</td></tr><tr><th scope="row">Pro</th><td>$10</td><td>约 $15</td><td>个人，含 Flex 额外额度</td></tr><tr><th scope="row">Pro+</th><td>$39</td><td>约 $70</td><td>个人，高端模型与更高额度</td></tr><tr><th scope="row">Max</th><td>$100</td><td>约 $200</td><td>个人，较高用量</td></tr><tr><th scope="row">Business</th><td>$19 / 席位</td><td>$19 / 用户</td><td>组织内共享 credits 池</td></tr><tr><th scope="row">Enterprise</th><td>$39 / 席位</td><td>$39 / 用户</td><td>共享池，需 GitHub Enterprise Cloud</td></tr></tbody></table></div>
+          <div class="access-note"><span class="tag">企业可选模式</span><h3>Copilot access：使用权包含在内，不代表 AI 免费。</h3><p>GHEC 授权用户额外席位费 $0；Standalone $10 / 用户 / 月。<strong>不含 credits；需消耗 credits 的 AI 功能自首次使用起按量计费。</strong>同一企业需在“含额度席位”与 access 模式之间选择，销售渠道和自助开放进度不同。</p></div>
+          <p class="panel-note">个人 Flex 额度可能变化；付费档补全与 NES 不限量。Copilot 不支持 Enterprise Server。AI 超额与预算需另行管理。</p>
+        </div>
+        <div id="panel-compute" class="pricing-panel" role="tabpanel" aria-labelledby="price-compute" tabindex="0">
+          <div class="table-scroll" role="region" aria-label="用量产品价格表，可横向滚动" tabindex="0"><table><caption>用量产品的代表价格</caption><thead><tr><th scope="col">产品</th><th scope="col">计费单位</th><th scope="col">参考价格</th><th scope="col">注意事项</th></tr></thead><tbody><tr><th scope="row">Actions · Linux 2 核 x64</th><td>分钟</td><td>$0.006</td><td>公开仓库标准 runner 免费</td></tr><tr><th scope="row">Actions · Windows 2 核</th><td>分钟</td><td>$0.010</td><td>从计算额度抵扣</td></tr><tr><th scope="row">Actions · macOS 3/4 核</th><td>分钟</td><td>$0.062</td><td>操作系统影响单价</td></tr><tr><th scope="row">Codespaces · 2 核</th><td>小时</td><td>$0.18</td><td>免费额度仅个人账户提供</td></tr><tr><th scope="row">Codespaces 存储</th><td>GB / 月</td><td>$0.07</td><td>与计算分开计费</td></tr><tr><th scope="row">Actions 制品 / Packages</th><td>GB / 月</td><td>$0.25</td><td>额度、保留期和存储量影响账单</td></tr></tbody></table></div>
+          <p class="panel-note">自托管 runner 的收费计划已推迟，资料时点仍免费。公开包免费；所列存储单价适用于收费范围内的超额用量，Container Registry 暂时免费。LFS / Packages 超额流量单价未核实。Sandbox 与 Actions 共享计算额度；私有仓库的 Copilot 代码审查也消耗 Actions 计算额度，应与 AI 用量共同核算。</p>
+        </div>
+        <div id="panel-security" class="pricing-panel" role="tabpanel" aria-labelledby="price-security" tabindex="0">
+          <div class="plans-grid security-plans"><article class="plan"><span class="plan-label">防止密钥泄露</span><h3>Secret Protection</h3><div class="price">$19<span>/ 活跃提交者 / 月</span></div><p>密钥扫描、推送保护、有效性检查、自定义规则和绕过控制。</p></article><article class="plan"><span class="plan-label">发现与修复代码风险</span><h3>Code Security</h3><div class="price">$30<span>/ 活跃提交者 / 月</span></div><p>CodeQL、依赖审查、Autofix 与安全活动；AI Scan 等 AI 用量另计。</p></article></div>
+          <div class="table-scroll" role="region" aria-label="生态与支持费用表，可横向滚动" tabindex="0"><table><caption>生态与支持</caption><tbody><tr><th scope="row">Sponsors</th><td>个人账户赞助 0% 手续费；组织账户赞助最多 6%，含支付处理费</td></tr><tr><th scope="row">Marketplace</th><td>历史 95 / 5 分成政策未重新核实，不作为当前收费结论</td></tr><tr><th scope="row">企业支持</th><td>Premium / Premium Plus：合同报价</td></tr></tbody></table></div>
+          <p class="panel-note">“活跃提交者”按过去 90 天向启用功能的仓库推送提交统计，GitHub App 机器人不计入。安全产品可由 Team 客户单独购买。公开仓库多数基础安全功能免费；AI Scan、agentic autofix 仍按 Code Security AI Credits 计费，公开仓库也适用。</p>
+        </div>
+      </div>
+      <p class="source-note">美元、未含税，企业合同与具体权益可能不同；不提供实时报价。<a href="docs/03-付费服务与定价.md">完整定价研究</a> · <a href="https://github.com/pricing" target="_blank" rel="noopener noreferrer">查看官方当前定价 ↗</a></p>
+    </section>
+
+    <section class="chapter" id="financials" aria-labelledby="financials-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">06 / 财务边界</span><h2 id="financials-title">生意在增长。<br>利润，仍是一个未知数。</h2></div><p>先区分公开事实、管理层表述和研究推断。<br>不把用户数当付费数，不把年化值当全年收入。</p></div>
+      <div class="finance-grid reveal">
+        <article class="revenue-anchor"><span class="eyebrow">明确的历史美元锚点</span><div class="big-revenue">$2<span>B</span></div><h3>2024 年 7 月年化营收</h3><p>管理层公开表述的 run-rate，经媒体转述。它是一个时点的年化运行规模，<strong>不是已审计的年度收入，也不是 2026 年营收。</strong></p><a href="#ref-revenue">来源与口径 [3] <span aria-hidden="true">↗</span></a></article>
+        <figure class="growth-chart" aria-labelledby="growth-title"><div class="chart-heading"><h3 id="growth-title">Copilot 用户覆盖在扩张</h3><span class="mono">单位：万人</span></div><div class="chart-bars"><div class="bar-column"><span class="bar-value">2,000</span><div class="bar-track"><span style="--bar:0.4"></span></div><span class="bar-date">2025.07</span></div><div class="bar-column"><span class="bar-value">2,600</span><div class="bar-track"><span style="--bar:0.52"></span></div><span class="bar-date">2025.10</span></div><div class="bar-column latest"><span class="bar-value">5,000</span><div class="bar-track"><span style="--bar:1"></span></div><span class="bar-date">2026.07</span></div></div><figcaption>披露用户数，不等于月活或付费用户数。前两项经媒体转述，最后一项来自微软财报逐字稿。<a href="docs/04-营收与盈利公开信息.md">口径详情 ↗</a></figcaption></figure>
+      </div>
+      <div class="financial-signals reveal"><article><span class="signal-date">FY26 Q4 / 2026.07</span><strong>60%+</strong><h3>Copilot 收入加速的管理层表述</h3><p lang="en">“Copilot revenue accelerated over 60% quarter-over-quarter.”</p><small>保留原句；不能据此推算收入绝对值。</small></article><article><span class="signal-date">FY27 Q1 / 2026.10</span><strong>翻倍以上</strong><h3>代理类 credit 消耗</h3><p>按量计费上线以来，代理类功能消耗增加；消耗 credits 的客户数环比增长 75% 以上。</p><small>原资料据第三方财报转录 / 报道的搜索摘要整理；微软 IR 原页抓取失败。<a href="docs/sources.md">来源 C3 ↗</a></small></article><article><span class="signal-date">FY27 Q1 / 2026.10</span><strong>50%+</strong><h3>Advanced Security 收入同比增长</h3><p>显示安全需求的增长，不等于安全收入占比，也不证明其毛利率。</p><small>原资料据第三方财报转录 / 报道的搜索摘要整理；微软 IR 原页抓取失败。<a href="docs/sources.md">来源 C3 ↗</a></small></article></div>
+      <div class="evidence-boundary reveal"><h3>这份研究无法回答的三个数字</h3><ul><li><span>01</span> GitHub 最新全年营收</li><li><span>02</span> Copilot 当前美元收入与付费人数</li><li><span>03</span> GitHub 的净利润与各业务毛利率</li></ul><p>能确认的是：管理层称 AI 用量曾拖累分部毛利率，改为按量计价后有所改善。不能从分部变化倒推出 GitHub 独立利润。</p></div>
+      <p class="source-note">依据：<a href="docs/04-营收与盈利公开信息.md">营收与盈利公开信息</a> · <a href="#ref-msft">微软 FY26 Q4 [2]</a>。FY27 财报归属科目仍待核实，未据此绘制收入结构图。</p>
+    </section>
+
+    <section class="chapter ai-chapter" id="ai" aria-labelledby="ai-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">07 / AI 战略</span><h2 id="ai-title">不必赢下每个模型。<br>要留在每次交付里。</h2></div><p>Copilot 是产品，Agent HQ 是平台，<br>AI Credits 是将使用转化为收入的机制。</p></div>
+      <div class="ai-evolution reveal"><div><span>2021 — 2023</span><h3>补全助手</h3><p>在编辑器里建议下一段代码</p></div><div><span>2024</span><h3>对话与多模型</h3><p>从补全走向理解与修改</p></div><div><span>2025</span><h3>代理与平台</h3><p>指派任务，自动发起 PR</p></div><div><span>2026</span><h3>交付系统</h3><p>跨仓库执行、审查与治理</p></div></div>
+      <div class="delivery-board reveal"><div class="board-header"><h3>软件交付闭环</h3><button class="replay-button" data-replay="delivery" type="button" hidden>演示工作流 <span aria-hidden="true">↻</span></button></div><ol class="delivery-flow"><li style="--step:0"><span class="flow-dot"></span><strong>Issue</strong><small>定义任务</small></li><li style="--step:1"><span class="flow-dot"></span><strong>Agent</strong><small>生成变更</small></li><li style="--step:2"><span class="flow-dot"></span><strong>Pull request</strong><small>可审查记录</small></li><li style="--step:3"><span class="flow-dot"></span><strong>Review</strong><small>人类把关</small></li><li style="--step:4"><span class="flow-dot"></span><strong>Security</strong><small>风险验证</small></li><li style="--step:5"><span class="flow-dot"></span><strong>Actions</strong><small>合并与交付</small></li></ol><div class="delivery-caption"><span>价值从“生成更多代码”移向“可靠完成工作”</span><small>示意流程；真实项目的扫描与 CI 可并行运行</small></div></div>
+      <div class="ai-strategy-grid reveal"><article><span class="strategy-index">A</span><h3>开放入口</h3><p>Agent HQ 接入 Claude、Codex 等第三方代理。对手也可能是平台工作负载的来源。</p></article><article><span class="strategy-index">B</span><h3>控制成本</h3><p>Fusion 多模型编排与微软 MAI 自研模型，降低对单一供应商和推理成本的依赖。</p></article><article><span class="strategy-index">C</span><h3>占住质量关口</h3><p>代码审查、安全扫描和企业策略，让生成内容经过验证，才进入实际交付。</p></article></div>
+      <div class="agent-stats reveal"><div><strong>40%+</strong><span>2026 年 9 月 PR 由代理起草</span><small>3 月为 17% · Octoverse 口径</small></div><div><strong>55%</strong><span>Copilot 月活用户使用代理功能</span><small>不是全部注册用户的比例</small></div><div><strong>47</strong><span>付费用户在 9 月使用过的模型种类</span><small>平台整体，不是每人使用 47 个</small></div></div>
+      <p class="source-note">依据：<a href="docs/06-AI战略与Copilot.md">AI 战略与 Copilot</a> · <a href="#ref-octoverse">Octoverse [1]</a>。财报“PR 涉及代理”与“代理起草 PR”口径不同，不直接比较。</p>
+    </section>
+
+    <section class="chapter" id="ecosystem" aria-labelledby="ecosystem-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">08 / 微软与生态</span><h2 id="ecosystem-title">背靠微软，<br>也依赖开发者的信任。</h2></div><p>企业渠道与云资源放大了商业能力；<br>开放、中立和可预期的规则维持生态。</p></div>
+      <div class="ecosystem-grid reveal"><div class="microsoft-map"><div class="parent-company"><span class="ms-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><h3>Microsoft</h3><span>2018 年收购</span></div><div class="org-link"></div><div class="coreai-box"><span class="eyebrow">CoreAI / Jay Parikh</span><h3>GitHub</h3><p>开发者身份 · 代码 · 协作 · 代理工作流</p></div><div class="synergy-grid"><div><strong>Azure</strong><span>基础设施与计算</span></div><div><strong>VS Code</strong><span>编辑器与分发入口</span></div><div><strong>MAI</strong><span>自研模型与降本</span></div><div><strong>企业渠道</strong><span>采购与销售协同</span></div></div><p class="map-note">归属与协同示意，非完整组织架构；独立 CEO 状态待核实。</p></div><div class="ecosystem-narrative"><article><span class="eyebrow">企业侧</span><h3>一套采购关系，多种产品落地</h3><p>身份管理、审计、数据驻留、支持与微软企业渠道共同降低大组织采用门槛。Enterprise Cloud 与自托管 Server 覆盖不同部署需求，但权益并不完全相同。</p></article><article><span class="eyebrow">基础设施侧</span><h3>Azure 迁移，是扩张也是压力</h3><p>原资料记录 2026 年新增 400 万 CPU 核、160 PB 存储与 50 Tb/s 网络能力，迁移目标为 2027 年初。目标不等于已完成，可用性仍需持续观察。</p></article><article><span class="eyebrow">开发者侧</span><h3>开源不是配角，而是入口</h3><p>Education、Sponsors、免费公开仓库工具和维护者权益培育网络。平台的长期优势依赖维护者愿意继续贡献，而非仅依靠用户总量。</p></article></div></div>
+      <div class="tension-strip reveal"><span>自营 Copilot <b>↔</b> 第三方代理中立性</span><span>免费开源生态 <b>↔</b> AI 活动商业化</span><span>GitHub 独立品牌 <b>↔</b> 微软体系整合</span></div>
+      <p class="source-note">依据：<a href="docs/05-商业模式与生态布局.md">商业模式与生态</a> · <a href="docs/01-公司概况与历史.md">组织与领导层</a> · <a href="#ref-universe">Universe 2026 [4]</a>。三组张力为研究解读。</p>
+    </section>
+
+    <section class="chapter" id="competition" aria-labelledby="competition-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">09 / 竞争与风险</span><h2 id="competition-title">护城河还在。<br>但入口不再属于它一家。</h2></div><p>AI 原生工具争夺开发者的日常入口；<br>可靠性与信任决定平台能否留住工作流。</p></div>
+      <div class="competitive-lanes reveal"><article><div><span class="lane-index">01</span><h3>争夺开发入口</h3><small>Copilot 的直接竞争</small></div><div><h4>Cursor · Claude Code · Codex</h4><p>AI 原生 IDE、终端和云端代理，争夺编码体验与开发者心智。它们也可能继续把代码和 PR 交付到 GitHub。</p></div><span class="lane-response">GitHub 的应对<br><strong>多模型 + Agent HQ</strong></span></article><article><div><span class="lane-index">02</span><h3>替代协作平台</h3><small>平台留存的竞争</small></div><div><h4>GitLab · Codeberg / Forgejo · Gitea</h4><p>一体化 DevSecOps、社区托管与自托管，分别满足企业集成、开源价值观、数据控制等需求。</p></div><span class="lane-response">GitHub 的应对<br><strong>网络效应 + 治理</strong></span></article><article><div><span class="lane-index">03</span><h3>重建软件基础设施</h3><small>供应商也可能变成对手</small></div><div><h4>模型厂商平台化 · Entire</h4><p>OpenAI 自研托管平台仍属媒体报道；Entire 探索代理上下文与提交记录的结合。产品形态与商业结果仍待观察。</p></div><span class="lane-response">GitHub 的应对<br><strong>交付闭环 + 可靠性</strong></span></article></div>
+      <p class="source-note">不采用不可比的估算 ARR 排名，也不将媒体报道的收购或估值作为核心结论。<a href="docs/07-AI时代的挑战与竞争.md">完整竞争研究及其可信度标注 ↗</a></p>
+      <div class="risk-header reveal"><h3>六个必须持续观察的风险</h3><span>展开查看依据与观察信号</span></div>
+      <div class="risk-list reveal">
+        <details open><summary><span class="risk-number">01</span><strong>可靠性与迁移</strong><span class="risk-level">短期关键</span><span class="details-sign" aria-hidden="true"></span></summary><div class="risk-detail"><p>代理增加平台负载，Azure 迁移同时改变基础设施。事故影响 CI、代码访问和企业信任；原资料中的大客户自建平台信息仍为媒体报道。</p><p><b>观察信号</b>月度可用性报告、重大事故时长、迁移目标是否完成。不要把扩容数字当作稳定性证明。</p></div></details>
+        <details><summary><span class="risk-number">02</span><strong>AI 入口与供应商竞争</strong><span class="risk-level">战略变量</span><span class="details-sign" aria-hidden="true"></span></summary><div class="risk-detail"><p>Copilot 的覆盖面不等于付费留存或代理能力领先。上游模型厂商同时拥有面向开发者的产品，竞争与合作并存。</p><p><b>观察信号</b>付费人数与留存披露、第三方代理占比、模型供应政策，以及 MAI 的实际采用。</p></div></details>
+        <details><summary><span class="risk-number">03</span><strong>定价与单位经济性</strong><span class="risk-level">经营变量</span><span class="details-sign" aria-hidden="true"></span></summary><div class="risk-detail"><p>按量计费有助于覆盖推理成本，也让用户账单更不确定。用量增长并不自动转化为利润增长。</p><p><b>观察信号</b>预算与超额体验、个人用户降级、企业 access 迁移，以及管理层对毛利的后续表述。</p></div></details>
+        <details><summary><span class="risk-number">04</span><strong>开源维护者与 AI 噪声</strong><span class="risk-level">生态变量</span><span class="details-sign" aria-hidden="true"></span></summary><div class="risk-detail"><p>低质量 AI PR 给维护者增加筛选和验证成本。平台出售生成能力，也必须承担过滤噪声的责任。</p><p><b>观察信号</b>PR 质量、CI 失败与维护者负担、关闭 / 限制外部 PR 的使用，以及核心项目迁出情况。</p></div></details>
+        <details><summary><span class="risk-number">05</span><strong>数据政策与版权诉讼</strong><span class="risk-level">法律与信任</span><span class="details-sign" aria-hidden="true"></span></summary><div class="risk-detail"><p>原资料称 2026 年 4 月起个人 Free / Pro / Pro+ 交互数据默认用于训练，可退出，Business / Enterprise 不受影响。Doe v. GitHub 的部分 DMCA 诉求被驳回，不代表所有训练与版权问题已解决。</p><p><b>观察信号</b>训练政策与退出路径、诉讼剩余请求、许可和监管变化。法律进展依据律所解读，非法律意见。</p></div></details>
+        <details><summary><span class="risk-number">06</span><strong>平台中立性与微软整合</strong><span class="risk-level">长期变量</span><span class="details-sign" aria-hidden="true"></span></summary><div class="risk-detail"><p>企业渠道和 Azure 资源带来协同，也可能让开发者担心平台偏向自家工具、模型与基础设施。</p><p><b>观察信号</b>第三方集成条款、数据可迁移性、开源社区反馈，以及自营和第三方代理的待遇。</p></div></details>
+      </div>
+      <div class="outlook reveal"><span class="eyebrow">看向未来 12 个月 / 研究推断</span><h3>短期看可靠性，长期看开发者信任。</h3><p>如果 GitHub 能让任何代理在这里可靠地完成工作，它就不必只押注某一个 AI 产品。反过来，再大的开发者网络，也不能长期替代稳定的平台和可预期的规则。</p><a class="text-link" href="docs/08-风险与展望.md">完整风险矩阵与观察清单 <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="chapter" id="sources" aria-labelledby="sources-title">
+      <div class="section-heading reveal"><div><span class="eyebrow">10 / 资料与来源</span><h2 id="sources-title">结论可回溯，<br>未知有边界。</h2></div><p>原始 10 份 Markdown 完整归档在 docs/。<br>本页是结构化展示，不替代原始证据。</p></div>
+      <div class="methodology reveal"><h3>如何阅读这份商业图谱</h3><div class="evidence-types"><span><b>官方材料</b> 定价、产品文档、财报表述</span><span><b>媒体 / 转录</b> 报道、二手转述、律所解读</span><span><b>研究推断</b> 商业逻辑、战略判断、风险分析</span><span><b>待核实</b> 缺少直接证据或存在口径冲突</span></div><p>研究资料更新于 <strong>2026 年 11 月 9 日</strong>。部分来源仅有搜索摘要，部分官方页面抓取失败后使用转录。此次网页制作未重新联网逐项核验，因此“官方材料”描述的是原资料的来源分类，不意味着本页独立确认全部事实。定价、组织和法律进展应以最新一手文件为准。</p></div>
+      <div class="document-grid reveal"><a href="docs/README.md"><span>00</span><div><strong>研究总览</strong><small>核心结论与待核实清单</small></div><span aria-hidden="true">↗</span></a><a href="docs/01-公司概况与历史.md"><span>01</span><div><strong>公司概况与历史</strong><small>关键数字、时间线、组织</small></div><span aria-hidden="true">↗</span></a><a href="docs/02-产品与功能矩阵.md"><span>02</span><div><strong>产品与功能矩阵</strong><small>生命周期、能力、基础设施</small></div><span aria-hidden="true">↗</span></a><a href="docs/03-付费服务与定价.md"><span>03</span><div><strong>付费服务与定价</strong><small>平台、AI、计算、安全与生态</small></div><span aria-hidden="true">↗</span></a><a href="docs/04-营收与盈利公开信息.md"><span>04</span><div><strong>营收与盈利公开信息</strong><small>管理层表述、估算与未知</small></div><span aria-hidden="true">↗</span></a><a href="docs/05-商业模式与生态布局.md"><span>05</span><div><strong>商业模式与生态布局</strong><small>收入线、飞轮与微软协同</small></div><span aria-hidden="true">↗</span></a><a href="docs/06-AI战略与Copilot.md"><span>06</span><div><strong>AI 战略与 Copilot</strong><small>代理、多模型、治理与计费</small></div><span aria-hidden="true">↗</span></a><a href="docs/07-AI时代的挑战与竞争.md"><span>07</span><div><strong>AI 时代的挑战与竞争</strong><small>对手、可靠性、法律与信任</small></div><span aria-hidden="true">↗</span></a><a href="docs/08-风险与展望.md"><span>08</span><div><strong>风险与展望</strong><small>风险矩阵与未来观察清单</small></div><span aria-hidden="true">↗</span></a><a href="docs/sources.md"><span>09</span><div><strong>完整来源索引</strong><small>分类链接、日期与抓取说明</small></div><span aria-hidden="true">↗</span></a></div>
+      <div class="reference-list reveal"><h3>关键数字与论点的来源入口</h3><ol><li id="ref-octoverse"><span>[1]</span><div><a href="https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/" target="_blank" rel="noopener noreferrer">GitHub Octoverse 2026 ↗</a><p>开发者规模、代理 PR、模型使用与活动指标。官方来源，原资料访问于 2026.11.09。</p></div></li><li id="ref-msft"><span>[2]</span><div><a href="https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4" target="_blank" rel="noopener noreferrer">Microsoft FY26 Q4 earnings call ↗</a><p>2026.07.29；Copilot 用户、企业覆盖、收入表述与毛利定性信息。</p></div></li><li id="ref-revenue"><span>[3]</span><div><a href="https://telanganatoday.com/githubs-annual-revenue-run-rate-hits-2-billion-driven-by-copilot-nadella" target="_blank" rel="noopener noreferrer">GitHub $2 billion run-rate：管理层发言的媒体转述 ↗</a><p>2024.07.31；历史年化规模，不是 2026 年财务数据。原资料只读取摘要。</p></div></li><li id="ref-universe"><span>[4]</span><div><a href="https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/" target="_blank" rel="noopener noreferrer">GitHub Universe 2026: Evolving every layer of the stack ↗</a><p>2026.10.28；平台定位、Copilot app、Fusion、基础设施与迁移目标。</p></div></li><li id="ref-pricing"><span>[5]</span><div><a href="https://github.com/pricing" target="_blank" rel="noopener noreferrer">GitHub Pricing ↗</a> · <a href="https://github.com/features/copilot/plans" target="_blank" rel="noopener noreferrer">Copilot Plans ↗</a><p>当前官方价格可能与本页的 2026.11 研究快照不同，采购前请重新确认。</p></div></li></ol></div>
+    </section>
+    <footer class="site-footer"><div><strong>GitHub 商业全景</strong><p>代码连接开发者，工作流连接商业。</p></div><span>独立研究展示 · 非官方<br>资料截至 2026.11.09</span><a href="#overview">回到顶部 <span aria-hidden="true">↑</span></a></footer>
+  </main>
+</body>
+</html>

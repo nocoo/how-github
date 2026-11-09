@@ -1,0 +1,9 @@
+.DS_Store
+.cloudflare/
+.wrangler/
+node_modules/
+dist/
+.env
+.env.*
+.dev.vars*
+__pycache__/
