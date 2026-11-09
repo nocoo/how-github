@@ -15,6 +15,11 @@ const { chromium } = require('playwright');
   page.on('requestfailed', (request) => errors.push(request.url()));
   try {
     await page.goto(url);
+    const version = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8')).version;
+    assert.equal(await page.locator('[data-version]').innerText(), `v${version}`);
+    assert.equal(await page.locator('.document-grid > a').count(), 17);
+    assert.equal(await page.locator('.role-grid > article').count(), 6);
+    assert.equal(await page.locator('.scenario-grid > article').count(), 3);
     await page.locator('.network-figure.is-visible').waitFor();
     await page.waitForTimeout(1000);
     await page.screenshot({ path: path.join(output, 'desktop.png') });
@@ -65,6 +70,33 @@ const { chromium } = require('playwright');
     await page.locator('[data-replay="network"]').click();
     assert(await page.locator('.network').evaluate((element) => element.getAnimations({ subtree: true }).some((animation) => animation.playState === 'running')));
 
+    await page.locator('.chapter-rail a[href="#jevons"]').click();
+    for (const [cost, volume, spending, comparison] of [
+      [50, 3, '150', '增加 50%'], [50, 2, '100', '与基线相同'], [50, 1.5, '75', '减少 25%'],
+      [25, 2, '50', '减少 50%'], [100, 6, '600', '增加 500%'],
+      [10, 1, '10', '减少 90%'], [35, 1.5, '52.5', '减少 47.5%'],
+    ]) {
+      await page.evaluate(({ cost, volume }) => {
+        document.querySelector('#unit-cost').value = cost;
+        document.querySelector('#usage-volume').value = volume;
+        document.querySelector('#usage-volume').dispatchEvent(new Event('input', { bubbles: true }));
+      }, { cost, volume });
+      assert.equal(await page.locator('#scenario-value').innerText(), spending);
+      assert((await page.locator('#jevons-result').innerText()).includes(comparison));
+      assert.equal(await page.locator('#scenario-bar').evaluate(element => Number(element.style.getPropertyValue('--spend'))), Number(spending) / 600);
+    }
+    await page.locator('#unit-cost').focus();
+    await page.keyboard.press('End');
+    assert.equal(await page.locator('#unit-cost').inputValue(), '100');
+    await page.keyboard.press('Home');
+    assert.equal(await page.locator('#unit-cost').inputValue(), '10');
+    await page.evaluate(() => {
+      document.querySelector('#unit-cost').value = 50;
+      document.querySelector('#usage-volume').value = 3;
+      document.querySelector('#unit-cost').dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    await page.locator('.jevons-board').screenshot({ path: path.join(output, 'jevons-desktop.png') });
+
     const risk = page.locator('.risk-list details').nth(1);
     await risk.locator('summary').click();
     assert(await risk.evaluate((element) => element.open));
@@ -81,7 +113,7 @@ const { chromium } = require('playwright');
     for (const width of [1440, 1024, 768, 390, 320]) {
       await page.setViewportSize({ width, height: 900 });
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Horizontal overflow at ${width}px`);
-      for (const anchor of ['#products', '#financials', '#competition', '#sources']) {
+      for (const anchor of ['#products', '#financials', '#growth', '#roles', '#competition', '#china', '#jevons', '#outlook', '#sources']) {
         await page.locator(`.chapter-rail a[href="${anchor}"]`).click();
         await page.waitForTimeout(150);
         assert.equal(await page.locator('.chapter-rail [aria-current]').getAttribute('href'), anchor);
@@ -96,6 +128,10 @@ const { chromium } = require('playwright');
         await page.waitForFunction(() => document.querySelector('#panel-copilot .table-scroll').scrollLeft > 0);
       }
       await page.locator('#price-platform').click();
+      await page.locator('#china-community-tab').click();
+      assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Community overflow at ${width}px`);
+      await page.locator('#china-platforms-tab').click();
+      assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `China table overflow at ${width}px`);
     }
     for (const height of [500, 400]) {
       await page.setViewportSize({ width: 1440, height });
@@ -114,8 +150,11 @@ const { chromium } = require('playwright');
 
     const staticPage = await browser.newPage({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     await staticPage.goto(url);
-    assert.equal(await staticPage.locator('.chapter').count(), 10);
-    assert.equal(await staticPage.locator('[role="tabpanel"]:visible').count(), 10);
+    assert.equal(await staticPage.locator('.chapter').count(), 15);
+    assert.equal(await staticPage.locator('[role="tabpanel"]:visible').count(), 12);
+    assert.equal(await staticPage.locator('[data-version]').innerText(), `v${version}`);
+    assert.equal(await staticPage.locator('#jevons-controls').isVisible(), false);
+    assert((await staticPage.locator('#jevons-result').innerText()).includes('总支出指数 150'));
     assert.equal(await staticPage.locator('.product-card:visible').count(), 12);
     assert.equal(await staticPage.locator('#motion-toggle').isVisible(), false);
     assert(await staticPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth));

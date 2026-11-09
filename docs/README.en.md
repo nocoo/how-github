@@ -11,11 +11,11 @@ This is independent research, not an official GitHub or Microsoft publication. S
 
 ## Features
 
-- Ten chapters: company overview, history, products, business flywheel, pricing, financial evidence, AI strategy, Microsoft ecosystem, competition and risks, and sources.
+- Fifteen chapters extending the business overview with growth definitions, six platform roles, Chinese platforms and community, Jevons effects, and industry scenarios.
 - Animated business connections, section entrances, charts, and delivery stages, with replay and animation controls.
-- An interactive timeline, four pricing categories, and twelve product capabilities filtered by business category.
+- An interactive timeline, four pricing categories, two China-topic views, twelve filterable product capabilities, and a Jevons example with adjustable unit cost and usage.
 - Responsive navigation, keyboard controls, reduced-motion support, and readable core content without JavaScript.
-- Ten original research documents preserved in `docs/`.
+- Seventeen preserved research documents: fifteen numbered chapters, the overview, and the source index. X discussions are selected examples, and scenario weights are subjective judgments.
 
 ## Usage
 
@@ -31,6 +31,8 @@ npm run dev
 npm run build
 ```
 
+`package.json` is the authoritative version. After changing it, run `npm run sync:version` to update the offline-compatible header label. Builds also synchronize it, and tests reject stale labels.
+
 Deployment uses `cf`. `wrangler.config.ts` only configures the static asset builder invoked by `cf`. Builds copy only the presentation, assets, and documentation, not Git metadata, tests, dependencies, or local credentials. There is no application backend, database, or runtime framework dependency.
 
 ```bash
@@ -45,13 +47,13 @@ Authenticate with `bun run cf auth login`, or provide a Cloudflare API Token in 
 npm test
 ```
 
-Checks cover research and links, JavaScript syntax, and the static publication boundary. Browser tests additionally require an existing Playwright installation and Chromium:
+Checks cover research and links, chapter ordering, version synchronization, JavaScript syntax, and the static publication boundary. Browser tests additionally require an existing Playwright installation and Chromium:
 
 ```bash
 NODE_PATH=/path/to/existing/node_modules npm run test:browser
 ```
 
-Browser checks cover offline reading, tabs, filters, keyboard operation, animation controls, mobile layouts, and short desktop navigation. They do not verify the truth of the underlying research.
+Browser checks cover offline reading, tabs, filters, Jevons calculations and boundaries, keyboard operation, animation controls, mobile layouts, and short desktop navigation. They do not verify the truth of the underlying research.
 
 ## Stack
 

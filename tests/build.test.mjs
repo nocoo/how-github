@@ -15,7 +15,10 @@ test("package only public files without changing their bytes", () => {
     if (!statSync(join(output, name)).isFile()) continue;
     assert.deepEqual(readFileSync(join(output, name)), readFileSync(join(root, name)), name);
   }
-  for (const name of [".git", ".cloudflare", ".env", "node_modules", "tests", "scripts", "package.json", "cloudflare.config.ts"]) {
+  const { version } = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
+  const html = readFileSync(join(output, "index.html"), "utf8");
+  assert.deepEqual([...html.matchAll(/data-version>([^<]+)<\/span>/g)].map(match => match[1]), [`v${version}`]);
+  for (const name of [".git", ".cloudflare", ".env", "node_modules", "tests", "scripts", "package.json", "cloudflare.config.ts", "CHANGELOG.md"]) {
     assert(!readdirSync(output).includes(name), `${name} must not be published`);
   }
 });

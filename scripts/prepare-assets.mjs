@@ -1,3 +1,4 @@
+import "./sync-version.mjs";
 import { cpSync, mkdirSync, rmSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";

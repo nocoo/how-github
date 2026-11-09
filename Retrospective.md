@@ -37,3 +37,9 @@ The approved package mirror also emitted machine-specific tarball URLs into the 
 The first production browser byte comparison found an additional Cloudflare Web Analytics script, although a curl response matched the uploaded HTML. The existing zone configuration injects the beacon for browser responses. Verification now identifies that exact Cloudflare script separately and compares the remaining authored HTML without changing zone-wide settings. Static files are still compared byte for byte. The zone WAF also returns 403 for probes such as `/.git/config`; production boundary checks must accept explicit edge denial as well as an asset 404, without treating either as published content.
 
 The local resolver also retained an NXDOMAIN result from the pre-deployment check. Authoritative DNS and public DNS-over-HTTPS already resolved the new domain. An isolated browser used the verified public IP while the local negative cache expired; no system DNS, certificate, or trust settings were modified.
+
+## 2026-11-09 — Keep synthesis as precise as its calculations
+
+Review of the second research integration caught two compressed statements: both Chinese account and active-developer figures referred to GitHub, not different platform coverage; and a usage percentage increase cannot be compared directly with a unit-cost percentage decrease to establish spending rebound. The text now states the distinct dates and active definitions and uses the exact product threshold. A 50% unit-cost / 1.5× usage browser regression case confirms spending remains below baseline.
+
+The review also restored historical trade-control context alongside the correction of a temporary access incident. Distinguish documented policy risk, operational incidents, and sample sentiment instead of collapsing them into one category.

@@ -27,6 +27,12 @@ Alternatively, `npm run deploy` runs checks, builds, and deploys. `cf` invokes t
 
 The site has no client-side routes requiring a catch-all. Unknown paths must return 404 rather than the homepage. Git metadata, local credentials, build configuration, tests, and dependencies are outside the static asset boundary.
 
+## Versioned releases
+
+Root `package.json` is the authoritative X.Y.Z version. Update it, run `npm run sync:version`, and maintain root `CHANGELOG.md`. Asset preparation also synchronizes the HTML label before copying files; tests require the committed source label to match the manifest. No runtime manifest request or backend is needed.
+
+Check the lockfile with the existing package manager without committing machine-specific registry URLs. After checks, commit and push the release, deploy that exact revision with its version/SHA in the deployment message, and verify exact-revision CI and production. Then push its `vX.Y.Z` tag and create the matching GitHub Release from the changelog. Do not move published tags.
+
 ## Authentication
 
 Authenticate with `bun run cf auth login`, use the existing `cf` login/profile or a scoped `CLOUDFLARE_API_TOKEN`. Credentials are never stored in repository files or GitHub Actions for the initial manual deployment. Do not copy the CLI account cache into Git.

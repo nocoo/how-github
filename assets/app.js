@@ -105,6 +105,29 @@ filters.addEventListener("click", (event) => {
   productCount.textContent = `${count} 项核心能力`;
 });
 
+const unitCost = document.querySelector("#unit-cost");
+const usageVolume = document.querySelector("#usage-volume");
+const formatNumber = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 2 });
+
+function updateJevons() {
+  const cost = Number(unitCost.value);
+  const volume = Number(usageVolume.value);
+  const spending = cost * volume;
+  const change = spending - 100;
+  const comparison = change === 0 ? "与基线相同" : `比基线${change > 0 ? "增加" : "减少"} ${formatNumber.format(Math.abs(change))}%`;
+  document.querySelector("#unit-cost-value").textContent = `${cost}%`;
+  document.querySelector("#usage-volume-value").textContent = `${formatNumber.format(volume)} 倍`;
+  document.querySelector("#scenario-value").textContent = formatNumber.format(spending);
+  document.querySelector("#scenario-bar").style.setProperty("--spend", spending / 600);
+  document.querySelector("#jevons-result").textContent = `单位成本为原来的 ${cost}%，使用量为 ${formatNumber.format(volume)} 倍：总支出指数 ${formatNumber.format(spending)}，${comparison}。`;
+  document.querySelector("#jevons-threshold").textContent = `基线指数为 100，不是美元；单位成本为原来的 ${cost}% 时，使用量达到约 ${formatNumber.format(100 / cost)} 倍，总支出才与基线相同。`;
+}
+
+unitCost.addEventListener("input", updateJevons);
+usageVolume.addEventListener("input", updateJevons);
+document.querySelector("#jevons-controls").hidden = false;
+updateJevons();
+
 const chapters = [...document.querySelectorAll(".chapter")];
 const navigation = document.querySelector(".chapter-rail");
 const chapterLinks = [...navigation.querySelectorAll("nav a")];
