@@ -2,7 +2,7 @@
 
 ## Open
 
-Open `../index.html` directly in a modern browser. Keep the `assets/` and `docs/` directories beside it. There is no build step, runtime package dependency, CDN, analytics, or server requirement.
+Open `../index.html` directly in a modern browser. Keep the `assets/` and `docs/` directories beside it. Offline reading needs no build step, runtime package dependency, analytics, or server. Cloudflare deployment uses the separate build tooling described in [deployment.md](deployment.md).
 
 The page includes ten chapters, a business relationship diagram, a historical timeline, twelve filterable product capabilities, four pricing views, financial evidence, an AI delivery sequence, Microsoft ecosystem relationships, competition, risks, and source links.
 
@@ -42,4 +42,4 @@ NODE_PATH=/path/to/existing/node_modules node tests/browser.cjs
 
 The browser suite requires an existing `playwright` module and its Chromium headless browser. It opens the local `file://` page and checks tabs, keyboard navigation, filters, replay, animation controls, reduced motion, risk disclosures, chapter links, no-JavaScript reading, overflow at 320, 390, 768, 1024, and 1440 pixels, and directory access in 400/500-pixel-tall desktop viewports. Screenshots are written to a new temporary directory printed by the test.
 
-No Git repository was present when this presentation was created. No repository was initialized and no deployment was performed.
+The source is tracked in the public `nocoo/how-github` repository. The production target is `https://github.hexly.ai`, served with Cloudflare Workers Static Assets. See [deployment.md](deployment.md) for tooling, the static publication boundary, and verification steps.

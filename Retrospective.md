@@ -25,3 +25,9 @@ Validate shared text tokens against every surface, including tinted cards, keep 
 The second review reproduced unreachable lower chapter links in short desktop viewports because the fixed sidebar could not scroll vertically. The sidebar now has vertical overflow handling, and browser checks cover both 400- and 500-pixel viewport heights.
 
 Test fixed navigation against constrained viewport height, not only mobile widths.
+
+## 2026-11-09 — Keep deployment tooling portable
+
+The first deployment instructions assumed a globally installed `cf`, although only project tooling was listed as a prerequisite. Review caught this before publication; standalone commands now use `bun run cf`, while package scripts resolve local binaries normally.
+
+The approved package mirror also emitted machine-specific tarball URLs into the newly generated Bun lockfile. Those generated URLs were normalized to registry-relative entries while preserving versions and integrity hashes; a frozen installation then completed without changes. Do not publish machine-specific registry URLs or assume a clean checkout inherits the author's global CLI.

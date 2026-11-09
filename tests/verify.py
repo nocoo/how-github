@@ -66,6 +66,11 @@ for name in research_files:
         if not url.scheme and not url.netloc and url.path:
             assert (path.parent / unquote(url.path)).is_file(), (name, link)
 
-assert {path.name for path in ROOT.glob("*.md")} <= {"Retrospective.md"}, "Research belongs in docs/"
+assert {path.name for path in ROOT.glob("*.md")} <= {"README.md", "AGENTS.md", "Retrospective.md"}, "Research belongs in docs/"
+for path in [ROOT / "README.md", ROOT / "docs/README.en.md", ROOT / "docs/site-guide.md", ROOT / "docs/deployment.md"]:
+    for link in re.findall(r'(?:\]\(|(?:href|src)=")([^\s)"\n]+)', path.read_text()):
+        url = urlsplit(link)
+        if not url.scheme and not url.netloc and url.path:
+            assert (path.parent / unquote(url.path)).is_file(), (path.name, link)
 assert "fetch(" not in (ROOT / "assets/app.js").read_text(), "Keep file:// support"
 print("通过：10 个章节、12 项产品、10 份原始资料、全部本地链接、锚点与 ARIA 关系。")

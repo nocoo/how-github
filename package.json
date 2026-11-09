@@ -1,0 +1,19 @@
+{
+  "name": "how-github",
+  "private": true,
+  "type": "module",
+  "description": "An interactive research atlas of GitHub's business and developer ecosystem.",
+  "engines": { "node": ">=22.18.0" },
+  "packageManager": "bun@1.4.4",
+  "scripts": {
+    "dev": "cf dev",
+    "build": "cf build",
+    "deploy": "npm test && cf deploy",
+    "test": "python3 tests/verify.py && node --check assets/app.js && node --test tests/build.test.mjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "cf": "1.0.0-beta.13",
+    "wrangler": "4.156.0"
+  }
+}
