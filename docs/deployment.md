@@ -37,7 +37,7 @@ The CI workflow runs checks and a build dry run only. It does not publish to Clo
 
 - Confirm the remote `main` SHA matches the local published commit.
 - Confirm CI completes successfully for that exact SHA.
-- Check the custom domain over HTTPS and compare its HTML, CSS, JavaScript, and linked research files with the local source.
+- Check the custom domain over HTTPS and compare its authored HTML, CSS, JavaScript, and linked research files with the local source. The existing zone configuration may inject a Cloudflare Web Analytics beacon into browser HTML responses. Record that specific edge-added script separately; do not alter zone-wide analytics settings as part of a site deployment.
 - Check unknown paths and repository-internal paths return 404.
 - Open the production site in a browser and exercise navigation, a pricing tab, and product filtering.
 

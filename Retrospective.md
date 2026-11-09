@@ -31,3 +31,9 @@ Test fixed navigation against constrained viewport height, not only mobile width
 The first deployment instructions assumed a globally installed `cf`, although only project tooling was listed as a prerequisite. Review caught this before publication; standalone commands now use `bun run cf`, while package scripts resolve local binaries normally.
 
 The approved package mirror also emitted machine-specific tarball URLs into the newly generated Bun lockfile. Those generated URLs were normalized to registry-relative entries while preserving versions and integrity hashes; a frozen installation then completed without changes. Do not publish machine-specific registry URLs or assume a clean checkout inherits the author's global CLI.
+
+## 2026-11-09 — Distinguish edge transformations from source drift
+
+The first production browser byte comparison found an additional Cloudflare Web Analytics script, although a curl response matched the uploaded HTML. The existing zone configuration injects the beacon for browser responses. Verification now identifies that exact Cloudflare script separately and compares the remaining authored HTML without changing zone-wide settings. Static files are still compared byte for byte.
+
+The local resolver also retained an NXDOMAIN result from the pre-deployment check. Authoritative DNS and public DNS-over-HTTPS already resolved the new domain. An isolated browser used the verified public IP while the local negative cache expired; no system DNS, certificate, or trust settings were modified.
