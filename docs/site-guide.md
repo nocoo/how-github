@@ -4,17 +4,18 @@
 
 Open `../index.html` directly in a modern browser. Keep the `assets/` and `docs/` directories beside it. Offline reading needs no build step, runtime package dependency, analytics, or server. Cloudflare deployment uses the separate build tooling described in [deployment.md](deployment.md).
 
-The page includes fifteen chapters. Alongside the original business overview, it now presents account and activity growth, six platform roles, expanded international competition, Chinese platforms and X discussions, an interactive Jevons example, and conditional industry scenarios.
+The page includes fifteen chapters. Alongside the original business overview, it now presents account and activity growth, six platform roles, expanded international competition, Chinese developers and global collaboration, an interactive Jevons example, and conditional industry scenarios.
 
 ## Interaction
 
 - Use the chapter navigation or scroll through the presentation.
-- Select timeline years, pricing categories, and China-topic views. Arrow keys, Home, and End work when a tab has focus.
+- Select timeline years and pricing categories. Arrow keys, Home, and End work when a tab has focus.
+- Read the China chapter as a continuous five-part narrative. Its platform comparison, historical policy context, and sampling methods expand through native disclosures, including without JavaScript.
 - Adjust the Jevons sliders to compare a hypothetical spending index against a baseline of 100. This is arithmetic, not measured GitHub performance or a revenue forecast.
 - Filter the product map by business category.
 - Replay the relationship diagram and AI delivery sequence.
 - Use the header control to disable animation. The page respects the operating system's reduced-motion preference.
-- With JavaScript disabled, all timeline, pricing, and China-topic panels remain readable, and the Jevons example keeps its static 50% unit-cost / 3× usage illustration.
+- With JavaScript disabled, all timeline and pricing panels and the China narrative remain readable, and the Jevons example keeps its static 50% unit-cost / 3× usage illustration.
 
 ## Research boundaries
 

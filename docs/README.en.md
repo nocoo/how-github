@@ -11,9 +11,10 @@ This is independent research, not an official GitHub or Microsoft publication. S
 
 ## Features
 
-- Fifteen chapters extending the business overview with growth definitions, six platform roles, Chinese platforms and community, Jevons effects, and industry scenarios.
+- Fifteen chapters extending the business overview with growth definitions, six platform roles, Chinese developers and global collaboration, Jevons effects, and industry scenarios.
 - Animated business connections, section entrances, charts, and delivery stages, with replay and animation controls.
-- An interactive timeline, four pricing categories, two China-topic views, twelve filterable product capabilities, and a Jevons example with adjustable unit cost and usage.
+- An interactive timeline, four pricing categories, twelve filterable product capabilities, and a Jevons example with adjustable unit cost and usage.
+- A developer-centered China chapter covering learning, contribution, access difficulties, and trust, with attributed individual experiences and expandable platform, policy, and sampling details.
 - Responsive navigation, keyboard controls, reduced-motion support, and readable core content without JavaScript.
 - Seventeen preserved research documents: fifteen numbered chapters, the overview, and the source index. X discussions are selected examples, and scenario weights are subjective judgments.
 

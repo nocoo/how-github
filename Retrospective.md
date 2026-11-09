@@ -43,3 +43,11 @@ The local resolver also retained an NXDOMAIN result from the pre-deployment chec
 Review of the second research integration caught two compressed statements: both Chinese account and active-developer figures referred to GitHub, not different platform coverage; and a usage percentage increase cannot be compared directly with a unit-cost percentage decrease to establish spending rebound. The text now states the distinct dates and active definitions and uses the exact product threshold. A 50% unit-cost / 1.5× usage browser regression case confirms spending remains below baseline.
 
 The review also restored historical trade-control context alongside the correction of a temporary access incident. Distinguish documented policy risk, operational incidents, and sample sentiment instead of collapsing them into one category.
+
+## 2026-11-10 — Test expanded content inside narrative grids
+
+Moving the China platform table into a native disclosure exposed a mobile grid minimum-size issue: the story body expanded to the table's intrinsic width instead of letting the inner table scroll. Setting the grid item's `min-width: 0` keeps overflow within the existing scroll region. Browser checks now expand all three disclosures at every supported width, exercise keyboard scrolling, and also open them without JavaScript.
+
+The review also found that replacing tabs with closed disclosures hid material in print. The print stylesheet now makes native details content visible without opening it on screen or requiring JavaScript, and browser checks cover both media states.
+
+When moving a working component into a new layout, test its expanded state, every ancestor's minimum sizing, and existing alternate views such as print; preserving the inner overflow rule alone is not sufficient.

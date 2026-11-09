@@ -20,6 +20,12 @@ const { chromium } = require('playwright');
     assert.equal(await page.locator('.document-grid > a').count(), 17);
     assert.equal(await page.locator('.role-grid > article').count(), 6);
     assert.equal(await page.locator('.scenario-grid > article').count(), 3);
+    assert.equal(await page.locator('#china .china-story').count(), 5);
+    assert.equal(await page.locator('#china .china-voice').count(), 3);
+    assert.equal(await page.locator('#china [role="tab"]').count(), 0);
+    for (const id of ['china-policy', 'china-platforms', 'china-method']) {
+      assert.equal(await page.locator(`#${id}`).evaluate(element => element.open), false);
+    }
     await page.locator('.network-figure.is-visible').waitFor();
     await page.waitForTimeout(1000);
     await page.screenshot({ path: path.join(output, 'desktop.png') });
@@ -128,10 +134,23 @@ const { chromium } = require('playwright');
         await page.waitForFunction(() => document.querySelector('#panel-copilot .table-scroll').scrollLeft > 0);
       }
       await page.locator('#price-platform').click();
-      await page.locator('#china-community-tab').click();
-      assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Community overflow at ${width}px`);
-      await page.locator('#china-platforms-tab').click();
-      assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `China table overflow at ${width}px`);
+      await page.locator('.chapter-rail a[href="#china"]').click();
+      assert(await page.locator('#china-learn').isVisible());
+      assert(await page.locator('#china-connection').isVisible());
+      for (const id of ['china-policy', 'china-platforms', 'china-method']) {
+        const detail = page.locator(`#${id}`);
+        await detail.locator(':scope > summary').click();
+        assert(await detail.evaluate(element => element.open));
+        assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${id} overflow at ${width}px`);
+        if (id === 'china-platforms' && width < 720) {
+          await detail.locator('.table-scroll').focus();
+          await page.keyboard.press('ArrowRight');
+          await page.waitForFunction(() => document.querySelector('#china-platforms .table-scroll').scrollLeft > 0);
+        }
+        await detail.locator(':scope > summary').focus();
+        await page.keyboard.press('Enter');
+        assert.equal(await detail.evaluate(element => element.open), false);
+      }
     }
     for (const height of [500, 400]) {
       await page.setViewportSize({ width: 1440, height });
@@ -147,11 +166,31 @@ const { chromium } = require('playwright');
     await page.screenshot({ path: path.join(output, 'mobile.png') });
     await page.locator('#financials').scrollIntoViewIfNeeded();
     await page.locator('.finance-grid').screenshot({ path: path.join(output, 'financials-mobile.png') });
+    await page.locator('.chapter-rail a[href="#china"]').click();
+    await page.screenshot({ path: path.join(output, 'china-mobile.png') });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.locator('.chapter-rail a[href="#china"]').click();
+    await page.screenshot({ path: path.join(output, 'china-desktop.png') });
 
     const staticPage = await browser.newPage({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     await staticPage.goto(url);
     assert.equal(await staticPage.locator('.chapter').count(), 15);
-    assert.equal(await staticPage.locator('[role="tabpanel"]:visible').count(), 12);
+    assert.equal(await staticPage.locator('[role="tabpanel"]:visible').count(), 10);
+    assert.equal(await staticPage.locator('#china .china-story:visible').count(), 5);
+    await staticPage.locator('#china-platforms > summary').click();
+    assert.equal(await staticPage.locator('#china-platforms tbody tr').count(), 7);
+    assert(await staticPage.locator('#china-platforms table').isVisible());
+    await staticPage.locator('#china-method > summary').click();
+    assert(await staticPage.locator('#china-method .sample-boundary').isVisible());
+    await staticPage.locator('#china-platforms > summary').click();
+    await staticPage.locator('#china-method > summary').click();
+    await staticPage.emulateMedia({ media: 'print' });
+    for (const id of ['china-policy', 'china-platforms', 'china-method']) {
+      assert.equal(await staticPage.locator(`#${id}`).evaluate(element => element.open), false);
+      assert(await staticPage.locator(`#${id} > .china-detail-body`).isVisible(), `${id} must print without opening`);
+    }
+    await staticPage.emulateMedia({ media: 'screen' });
+    assert.equal(await staticPage.locator('#china-platforms > .china-detail-body').isVisible(), false);
     assert.equal(await staticPage.locator('[data-version]').innerText(), `v${version}`);
     assert.equal(await staticPage.locator('#jevons-controls').isVisible(), false);
     assert((await staticPage.locator('#jevons-result').innerText()).includes('总支出指数 150'));
