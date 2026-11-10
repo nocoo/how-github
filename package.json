@@ -1,6 +1,6 @@
 {
   "name": "how-github",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "description": "An interactive research atlas of GitHub's business and developer ecosystem.",
@@ -17,5 +17,10 @@
   "devDependencies": {
     "cf": "1.0.0-beta.13",
     "wrangler": "4.156.0"
+  },
+  "overrides": {
+    "sharp": "^0.35.5",
+    "undici": "^7.30.1",
+    "zod": "^4.6.6"
   }
 }

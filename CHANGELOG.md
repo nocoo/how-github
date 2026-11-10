@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.1 — 2026-11-10
+
+### Security
+
+- Pin transitive dependencies via Bun overrides: `sharp` 0.35.5, `undici` 7.30.1, `zod` 4.6.6+.
+
 ## v1.0.0 — 2026-11-09
 
 First versioned release; the earlier site was deployed without a package version, Git tag, or GitHub Release. Website integration is compared with research commit `02a7690`; the preceding website baseline is `cd6b895`.
