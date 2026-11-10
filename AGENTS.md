@@ -12,7 +12,7 @@
 
 ## Commands
 
-- Install tooling: `bun install --frozen-lockfile` (Node.js 22.18+, Bun 1.4.4).
+- Install tooling: `bun install --frozen-lockfile` (Node.js 26+, Bun 1.4.4).
 - Checks: `npm test`.
 - Browser checks: `NODE_PATH=/path/to/existing/node_modules npm run test:browser`; requires Playwright and its Chromium browser.
 - Development: `npm run dev`.

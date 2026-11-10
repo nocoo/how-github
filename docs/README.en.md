@@ -24,7 +24,7 @@ Clone the repository and open the root `index.html` in your browser. Keep `asset
 
 ## Development
 
-Building and deployment require Node.js **22.18+**, Bun **1.4.4**, and Python 3.
+Building and deployment require Node.js **26+**, Bun **1.4.4**, and Python 3.
 
 ```bash
 bun install --frozen-lockfile
