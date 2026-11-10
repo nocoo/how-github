@@ -11,7 +11,7 @@ The production domain is declared in `cloudflare.config.ts`. `workers.dev` and v
 
 ## Build and publish
 
-Use Node.js 22.18+, Bun 1.4.4, Python 3, and an authorized Cloudflare account:
+Use Node.js 26+, Bun 1.4.4, Python 3, and an authorized Cloudflare account:
 
 ```bash
 bun install --frozen-lockfile

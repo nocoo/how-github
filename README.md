@@ -24,7 +24,7 @@
 
 ## 开发
 
-构建和部署需要 Node.js **22.18+**、Bun **1.4.4** 和 Python 3。
+构建和部署需要 Node.js **26+**、Bun **1.4.4** 和 Python 3。
 
 ```bash
 bun install --frozen-lockfile
